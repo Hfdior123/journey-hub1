@@ -1,1 +1,1 @@
-# journey-hub
+# Journey Hub
