@@ -1,0 +1,70 @@
+2025-01-14 23:46:28,634 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2025-01-14 23:46:28,647 INFO o.a.j.JMeter: Loading user properties from: /usr/local/apache-jmeter/bin/user.properties
+2025-01-14 23:46:28,648 INFO o.a.j.JMeter: Loading system properties from: /usr/local/apache-jmeter/bin/system.properties
+2025-01-14 23:46:28,651 INFO o.a.j.JMeter: Copyright (c) 1998-2022 The Apache Software Foundation
+2025-01-14 23:46:28,651 INFO o.a.j.JMeter: Version 5.5
+2025-01-14 23:46:28,651 INFO o.a.j.JMeter: java.version=23.0.1
+2025-01-14 23:46:28,651 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2025-01-14 23:46:28,651 INFO o.a.j.JMeter: os.name=Mac OS X
+2025-01-14 23:46:28,651 INFO o.a.j.JMeter: os.arch=aarch64
+2025-01-14 23:46:28,651 INFO o.a.j.JMeter: os.version=14.4.1
+2025-01-14 23:46:28,651 INFO o.a.j.JMeter: file.encoding=UTF-8
+2025-01-14 23:46:28,651 INFO o.a.j.JMeter: java.awt.headless=true
+2025-01-14 23:46:28,651 INFO o.a.j.JMeter: Max memory     =1073741824
+2025-01-14 23:46:28,651 INFO o.a.j.JMeter: Available Processors =8
+2025-01-14 23:46:28,659 INFO o.a.j.JMeter: Default Locale=English (EN)
+2025-01-14 23:46:28,659 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2025-01-14 23:46:28,659 INFO o.a.j.JMeter: JMeterHome=/usr/local/apache-jmeter
+2025-01-14 23:46:28,659 INFO o.a.j.JMeter: user.dir  =/Users/Apple/journey-hub
+2025-01-14 23:46:28,659 INFO o.a.j.JMeter: PWD       =/Users/Apple/journey-hub
+2025-01-14 23:46:28,680 INFO o.a.j.JMeter: IP: 10.216.42.168 Name: MacBook-Pro.local FullName: 10.216.42.168
+2025-01-14 23:46:28,688 INFO o.a.j.s.FileServer: Default base='/Users/Apple/journey-hub'
+2025-01-14 23:46:28,688 INFO o.a.j.s.FileServer: Set new base='/Users/Apple/journey-hub/tests'
+2025-01-14 23:46:28,836 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2025-01-14 23:46:28,862 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2025-01-14 23:46:28,864 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2025-01-14 23:46:28,865 INFO o.a.j.s.SaveService: Loading file: tests/load_tests.jmx
+2025-01-14 23:46:28,894 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-01-14 23:46:28,894 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-01-14 23:46:28,894 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-01-14 23:46:28,894 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-01-14 23:46:28,894 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2025-01-14 23:46:28,894 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2025-01-14 23:46:28,898 INFO o.a.j.JMeter: Creating summariser <summary>
+2025-01-14 23:46:28,906 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2025-01-14 23:46:28,906 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2025-01-14 23:46:28,907 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2025-01-14 23:46:28,908 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2025-01-14 23:46:28,908 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2025-01-14 23:46:28,936 INFO o.a.j.JMeter: Running test (1736894788936)
+2025-01-14 23:46:28,948 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2025-01-14 23:46:28,948 INFO o.a.j.e.StandardJMeterEngine: Starting 5 threads for group Thread Group.
+2025-01-14 23:46:28,948 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2025-01-14 23:46:28,948 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=5 ramp-up=5 delayedStart=false
+2025-01-14 23:46:28,950 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2025-01-14 23:46:28,951 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2025-01-14 23:46:28,951 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2025-01-14 23:46:28,962 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = MacBook-Pro.local
+2025-01-14 23:46:28,965 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2025-01-14 23:46:28,966 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2025-01-14 23:46:28,966 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2025-01-14 23:46:28,967 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2025-01-14 23:46:28,967 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2025-01-14 23:46:29,039 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2025-01-14 23:46:29,039 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2025-01-14 23:46:29,954 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-2
+2025-01-14 23:46:30,006 INFO o.a.j.r.Summariser: summary +     19 in 00:00:01 =   17.8/s Avg:     3 Min:     1 Max:    17 Err:     0 (0.00%) Active: 1 Started: 2 Finished: 1
+2025-01-14 23:46:30,011 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-2
+2025-01-14 23:46:30,012 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-2
+2025-01-14 23:46:30,953 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-3
+2025-01-14 23:46:31,001 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-3
+2025-01-14 23:46:31,001 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-3
+2025-01-14 23:46:31,954 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-4
+2025-01-14 23:46:31,995 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-4
+2025-01-14 23:46:31,995 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-4
+2025-01-14 23:46:32,954 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-5
+2025-01-14 23:46:33,004 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-5
+2025-01-14 23:46:33,004 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-5
+2025-01-14 23:46:33,004 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2025-01-14 23:46:33,007 INFO o.a.j.r.Summariser: summary +     31 in 00:00:03 =   10.3/s Avg:     3 Min:     2 Max:     9 Err:     0 (0.00%) Active: 0 Started: 5 Finished: 5
+2025-01-14 23:46:33,007 INFO o.a.j.r.Summariser: summary =     50 in 00:00:04 =   12.3/s Avg:     3 Min:     1 Max:    17 Err:     0 (0.00%)

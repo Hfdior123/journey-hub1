@@ -1,0 +1,27 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: python:3.11
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: pip install -r requirements.txt
+      - run:
+          name: Run unit tests
+          command: python3 -m unittest discover -s tests -p "*.py"
+      - run:
+          name: Run load tests
+          command: |
+            apt-get update && apt-get install -y openjdk-11-jdk
+            curl -L -o jmeter.tgz https://downloads.apache.org//jmeter/binaries/apache-jmeter-5.5.tgz
+            tar -xvzf jmeter.tgz
+            ./apache-jmeter-5.5/bin/jmeter -n -t tests/load_tests.jmx -l tests/load_test_results.jtl
+
+workflows:
+  version: 2
+  test-workflow:
+    jobs:
+      - test
