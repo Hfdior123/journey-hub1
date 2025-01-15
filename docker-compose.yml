@@ -1,25 +1,46 @@
-version: "3.8"
+networks:
+  my_network:
+
 services:
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    platform: linux/amd64
     ports:
-      - "5000:5000"
+      - "9090:9090"
+    networks:
+      - my_network
+    volumes:
+      - ./grafana/prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+
+  fluentd:
+    image: custom-fluentd
+    container_name: fluentd
+    platform: linux/amd64
+    ports:
+      - "24224:24224"
+      - "24231:24231"
+    networks:
+      - my_network
+    volumes:
+      - ./fluent.conf:/fluentd/etc/fluent.conf
+      - ./logs:/fluentd/logs
 
   grafana:
-    image: grafana/grafana:latest
+    image: grafana/grafana
     container_name: grafana
+    platform: linux/amd64
     ports:
       - "3000:3000"
+    networks:
+      - my_network
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
-
-  prometheus:
-    image: prom/prometheus:latest
-    container_name: prometheus
-    ports:
-      - "9090:9090"
+    depends_on:
+      - prometheus
+      - fluentd
     volumes:
-      - ./grafana/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./grafana/provisioning:/etc/grafana/provisioning

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">Journey Hub</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/destinations">Destinations</a>
+            <a href="/book">Book</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Journey Hub</h1>
+            <p>Explore the world like never before. Your next adventure awaits.</p>
+            <div class="buttons">
+                <a href="/destinations" class="btn">Discover Destinations</a>
+                <a href="/book" class="btn btn-secondary">Plan Your Trip</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="highlights">
+        <h2>Why Choose Journey Hub?</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>Exclusive Deals</h3>
+                <p>Get access to unbeatable travel offers and discounts.</p>
+            </div>
+            <div class="feature">
+                <h3>Top Destinations</h3>
+                <p>Carefully curated destinations to suit all travel tastes.</p>
+            </div>
+            <div class="feature">
+                <h3>24/7 Support</h3>
+                <p>Our team is here to assist you anytime, anywhere.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

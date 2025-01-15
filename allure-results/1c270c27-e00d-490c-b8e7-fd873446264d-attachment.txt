@@ -1,0 +1,9 @@
+Request URL: http://localhost/book
+Request Method: POST
+Request Headers: User-Agent: werkzeug/2.2.3
+Host: localhost
+Content-Type: application/json
+Content-Length: 24
+
+
+Request Body: {"destination": "Paris"}

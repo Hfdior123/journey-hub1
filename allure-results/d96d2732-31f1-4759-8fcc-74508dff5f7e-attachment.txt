@@ -1,0 +1,7 @@
+Request URL: http://localhost/
+Request Method: GET
+Request Headers: User-Agent: werkzeug/2.2.3
+Host: localhost
+
+
+Request Body: 

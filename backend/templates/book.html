@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Trip</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">Journey Hub</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/destinations">Destinations</a>
+            <a href="/book">Book</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <section class="form-container">
+        <h1>Plan Your Perfect Trip</h1>
+        <form>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="destination">Destination</label>
+            <select id="destination" name="destination" required>
+                <option value="paris">Paris, France</option>
+                <option value="tokyo">Tokyo, Japan</option>
+                <option value="nyc">New York, USA</option>
+                <option value="santorini">Santorini, Greece</option>
+                <option value="rome">Rome, Italy</option>
+                <option value="dubai">Dubai, UAE</option>
+            </select>
+
+            <label for="travelers">Number of Travelers</label>
+            <input type="number" id="travelers" name="travelers" placeholder="Enter number of travelers" required>
+
+            <label for="date">Travel Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <button type="submit" class="btn">Book Now</button>
+        </form>
+    </section>
+</body>
+</html>
