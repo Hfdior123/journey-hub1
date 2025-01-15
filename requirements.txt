@@ -2,4 +2,5 @@ flask
 requests
 pytest
 allure-pytest
+pytest-flask
 
