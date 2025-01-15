@@ -5,20 +5,19 @@ jobs:
     docker:
       - image: python:3.9  # Use the official Python 3.9 Docker image
     steps:
-      - checkout  # Checks out your repository
+      - checkout  # Check out the repository
       - run:
-          name: Install Dependencies
+          name: Set up Python environment
           command: |
-            python -m pip install --upgrade pip
-            pip install pytest  # Install pytest for testing
+            python -m pip install --upgrade pip  # Upgrade pip
+            pip install -r requirements.txt  # Install all dependencies listed in requirements.txt
       - run:
           name: Run Tests
           command: |
-            echo "def test_hello_circleci(): assert True" > test_hello_circleci.py  # Example test
-            pytest  # Run pytest to execute the tests
+            pytest --maxfail=1 --disable-warnings  # Run pytest with basic options to handle errors gracefully
 
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build  # Execute the 'build' job in the workflow
+      - build
