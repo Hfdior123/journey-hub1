@@ -12,13 +12,13 @@ jobs:
             python -m pip install --upgrade pip
             pip install pytest
       - run:
-          name: Run Tests
+          name: Create and Run Tests
           command: |
-            echo "print('Hello, CircleCI!')" > test_script.py
-            pytest test_script.py
+            echo "def test_hello_circleci(): assert True" > test_hello_circleci.py
+            pytest
 
 workflows:
   version: 2
-  build-and-test:
+  build_and_test:
     jobs:
       - build
