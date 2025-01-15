@@ -1,27 +1,42 @@
 version: 2.1
 
-jobs:
-  test:
+executors:
+  default-executor:
     docker:
-      - image: python:3.11
+      - image: circleci/python:3.9
+    working_directory: ~/project
+
+jobs:
+  run-tests:
+    executor: default-executor
     steps:
       - checkout
       - run:
-          name: Install dependencies
-          command: pip install -r requirements.txt
-      - run:
-          name: Run unit tests
-          command: python3 -m unittest discover -s tests -p "*.py"
-      - run:
-          name: Run load tests
+          name: Install Dependencies
           command: |
-            apt-get update && apt-get install -y openjdk-11-jdk
-            curl -L -o jmeter.tgz https://downloads.apache.org//jmeter/binaries/apache-jmeter-5.5.tgz
+            apt-get update
+            apt-get install -y software-properties-common
+            add-apt-repository -y ppa:openjdk-r/ppa
+            apt-get update
+            apt-get install -y openjdk-11-jdk
+            python3 -m pip install --upgrade pip
+            pip install -r requirements.txt
+      - run:
+          name: Run Unit Tests
+          command: |
+            python3 -m unittest discover -s tests
+      - run:
+          name: Download and Set Up JMeter
+          command: |
+            curl -L -o jmeter.tgz https://downloads.apache.org/jmeter/binaries/apache-jmeter-5.5.tgz
             tar -xvzf jmeter.tgz
+      - run:
+          name: Run Load Tests
+          command: |
             ./apache-jmeter-5.5/bin/jmeter -n -t tests/load_tests.jmx -l tests/load_test_results.jtl
 
 workflows:
   version: 2
-  test-workflow:
+  build-and-test:
     jobs:
-      - test
+      - run-tests
