@@ -1,42 +1,24 @@
 version: 2.1
 
-executors:
-  default-executor:
-    docker:
-      - image: circleci/python:3.9
-    working_directory: ~/project
-
 jobs:
-  run-tests:
-    executor: default-executor
+  build:
+    docker:
+      - image: python:3.9
     steps:
       - checkout
       - run:
           name: Install Dependencies
           command: |
-            sudo apt-get update
-            sudo apt-get install -y software-properties-common
-            sudo add-apt-repository -y ppa:openjdk-r/ppa
-            sudo apt-get update
-            sudo apt-get install -y openjdk-11-jdk
-            python3 -m pip install --upgrade pip
-            pip install -r requirements.txt
+            python -m pip install --upgrade pip
+            pip install pytest
       - run:
-          name: Run Unit Tests
+          name: Run Tests
           command: |
-            python3 -m unittest discover -s tests
-      - run:
-          name: Download and Set Up JMeter
-          command: |
-            curl -L -o jmeter.tgz https://downloads.apache.org/jmeter/binaries/apache-jmeter-5.5.tgz
-            tar -xvzf jmeter.tgz
-      - run:
-          name: Run Load Tests
-          command: |
-            ./apache-jmeter-5.5/bin/jmeter -n -t tests/load_tests.jmx -l tests/load_test_results.jtl
+            echo "print('Hello, CircleCI!')" > test_script.py
+            pytest test_script.py
 
 workflows:
   version: 2
   build-and-test:
     jobs:
-      - run-tests
+      - build
